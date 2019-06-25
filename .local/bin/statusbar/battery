@@ -1,0 +1,50 @@
+#!/bin/sh
+
+[ -z $battID ] && battID="$1" 
+
+capacity=$(cat /sys/class/power_supply/$battID/capacity) || exit
+status=$(cat /sys/class/power_supply/$battID/status)
+charge_full=$(cat /sys/class/power_supply/$battID/charge_full)
+charge_now=$(cat /sys/class/power_supply/$battID/charge_now)
+
+if [ "$charge_now" -eq "$charge_full" ]; then
+	status=""
+	capacity=100
+        color="#00ff00"
+elif [ "$capacity" -ge 90 ]; then
+        color="#00ff00"
+	status=$(echo "$status" | sed -e "s/Discharging//;s/Charging//")
+elif [ "$capacity" -ge 80 ]; then
+        color="#00ff00"
+	status=$(echo "$status" | sed -e "s/Discharging//;s/Charging//")
+elif [ "$capacity" -ge 70 ]; then
+        color="#ffff00"
+	status=$(echo "$status" | sed -e "s/Discharging//;s/Charging//")
+elif [ "$capacity" -ge 60 ]; then
+        color="#ffffff"
+	status=$(echo "$status" | sed -e "s/Discharging//;s/Charging//")
+elif [ "$capacity" -ge 50 ]; then
+        color="#ffff00"
+	status=$(echo "$status" | sed -e "s/Discharging//;s/Charging//")
+elif [ "$capacity" -ge 40 ]; then
+        color="#ff8000"
+	status=$(echo "$status" | sed -e "s/Discharging//;s/Charging//")
+elif [ "$capacity" -ge 30 ]; then
+        color="#ff8000"
+	status=$(echo "$status" | sed -e "s/Discharging//;s/Charging//")
+elif [ "$capacity" -ge 20 ]; then
+        color="#ff0000"
+	status=$(echo "$status" | sed -e "s/Discharging//;s/Charging//")
+elif [ "$capacity" -ge 10 ]; then
+        color="#ff0000"
+        warn="❗"
+	status=$(echo "$status" | sed -e "s/Discharging//;s/Charging//")
+else
+        color="#ff0000"
+	status=$(echo "$status" | sed -e "s/Discharging//;s/Charging//")
+        warn=" ❗"
+fi
+
+[ -z $warn ] && warn=" "
+
+printf "<span color='%s'>%s%s</span><span color='#18B495'> %s%s </span>\n" "$color" "$warn" "$status" "$capacity" "%"

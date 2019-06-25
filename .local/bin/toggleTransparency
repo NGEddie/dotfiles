@@ -1,0 +1,5 @@
+#!/bin/sh
+
+isRunning=$(ps ax | grep compton | grep -v "grep")
+
+[ -z "$isRunning" ] && compton -b || killall compton 

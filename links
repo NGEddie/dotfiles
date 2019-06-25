@@ -1,0 +1,16 @@
+ln -s /home/nigel/repos/dotfiles/.gitconfig /home/nigel/.gitconfig
+ln -s /home/nigel/repos/dotfiles/.vimrc /home/nigel/.vimrc
+ln -s /home/nigel/repos/dotfiles/.zshrc /home/nigel/.zshrc
+ln -s /home/nigel/repos/dotfiles/.xinitrc /home/nigel/.xinitrc
+ln -s /home/nigel/repos/dotfiles/.Xresources /home/nigel/.Xresources
+ln -s /home/nigel/repos/dotfiles/i3/ /home/nigel/.config/i3/
+ln -s /home/nigel/repos/dotfiles/i3/ /home/nigel/.config/i3/
+ln -s /home/nigel/repos/dotfiles/i3/ /home/nigel/.config/
+ln -s /home/nigel/repos/dotfiles/i3/ /home/nigel/.config/
+ln -s /home/nigel/repos/dotfiles/i3blocks /home/nigel/.config/
+ln -s /home/nigel/repos/dotfiles/systemd /home/nigel/.config/
+ln -s /home/nigel/repos/dotfiles/.local/share/fonts/Inconsolata\ for\ Powerline.otf /home/nigel/.local/share/fonts/
+ln -s /home/nigel/repos/dotfiles/.local/share/fonts/Inconsolata\ Nerd\ Font\ Complete.otf /home/nigel/.local/share/fonts/
+ln -s /home/nigel/repos/dotfiles/.local/bin/statusbar /home/nigel/.local/bin
+ln -s /home/nigel/repos/dotfiles/.local/bin/toggleTransparency /home/nigel/.local/bin/
+ln -s /home/nigel/repos/dotfiles/wallpapers /home/nigel

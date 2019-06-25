@@ -1,0 +1,6 @@
+[Unit]
+Description=A Test of the timers
+
+[Service]
+ExecStart=
+ExecStart=/home/nigel/.config/systemd/user/atest

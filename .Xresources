@@ -1,0 +1,7 @@
+XTerm*termName: 	xterm-256color
+XTerm*faceName: 	Inconsolata Nerd Font
+XTerm*faceSize:		9
+XTerm*background:	#222D31
+XTerm*foreground:	#d8d8d8
+XTerm*reverseVideo:	off
+
