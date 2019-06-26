@@ -146,6 +146,8 @@ source $ZSH/oh-my-zsh.sh
 alias ll="ls -lha"
 alias vv="vim ~/.vimrc"
 alias vz="vim ~/.zshrc"
+alias vi3="vim ~/.config/i3/config"
+alias dot="cd ~/repos/dotfiles/ ; git status"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"

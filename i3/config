@@ -8,6 +8,8 @@ floating_modifier $mod
 # start a terminal
 bindsym $mod+Return exec xterm
 
+# test of move
+bindsym $mod+q move position 10 10
 # kill focused window
 bindsym $mod+Shift+q kill
 
@@ -75,6 +77,11 @@ bindsym $mod+Shift+space floating toggle
 bindsym $mod+space focus mode_toggle
 bindsym $mod+s sticky toggle
 
+########################
+## Application Windows ##
+########################
+for_window [class="mpv"] floating enable sticky enable
+no_focus [class="mpv"]
 
 ########################
 ####   Workspaces   ####
@@ -202,7 +209,7 @@ mode "$mode_gaps" {
   bindsym o mode "$mode_gaps_outer"
   bindsym i mode "$mode_gaps_inner"
   bindsym Return  mode "default"
-  bindsym Escape  mode "defaul"
+  bindsym Escape  mode "default"
 }
 
 mode "$mode_gaps_inner" {
@@ -210,12 +217,12 @@ mode "$mode_gaps_inner" {
   bindsym minus gaps inner current minus 5
   bindsym 0 gaps inner current set 0
 
-  bindsym Shift+plus  gaps inner all plus 5
+
   bindsym Shift+minus gaps inner all minus 5
   bindsym Shift+0     gaps inner all set 0
 
   bindsym Return  mode "default"
-  bindsym Escape  mode "defaul"
+  bindsym Escape  mode "default"
 }
 
 mode "$mode_gaps_outer" {
@@ -228,7 +235,7 @@ mode "$mode_gaps_outer" {
   bindsym Shift+0     gaps outer all set 0
 
   bindsym Return  mode "default"
-  bindsym Escape  mode "defaul"
+  bindsym Escape  mode "default"
 }
 
 ####################################
@@ -245,7 +252,25 @@ mode "$mode_shutdown" {
   bindsym Shift+s exec --no-startup-id i3exit shutdown, mode "default"
 
   bindsym Return mode "default"
-  bindsym Esc mode "default"
+  bindsym Escape mode "default"
 }
+
+####################################
+######  Move Floating Window  ######
+####################################
+bindsym $mod+m mode "$mode_move_window"
+set $mode_move_window 1:Top Left, 2:Top Right, 3:Bottom Left, 4:Bottom Right, 5:Center
+mode "$mode_move_window" {
+  bindsym 1 move position 5 25, mode "default"
+  bindsym 2 move position 1115 25, mode "default"
+  bindsym 3 move position 5 625, mode "default"
+  bindsym 4 move position 1115 625, mode "default"
+  bindsym 5 move absolute position center, mode "default"
+
+  bindsym Return mode "default"
+  bindsym Escape mode "default"
+}
+
+
 
 
