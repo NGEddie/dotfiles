@@ -1,0 +1,6 @@
+[Unit]
+Description=Updates Pacmans Repos
+
+[Service]
+ExecStart=
+ExecStart=pacman -Sy

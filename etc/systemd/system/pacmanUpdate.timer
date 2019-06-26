@@ -1,0 +1,9 @@
+[unit]
+Description=Updates Pacmans Repos
+
+[Timer]
+OnBootSec=5min
+OnUnitActiveSec=6h
+
+[Install]
+WantedBy=timers.target
