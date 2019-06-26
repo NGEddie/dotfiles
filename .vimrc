@@ -31,7 +31,7 @@ set backupdir=/tmp
 " Column Width Settings
 set colorcolumn=80
 set textwidth=80
-set formatoptions=clqn1jp
+set formatoptions=clqn1j
 
 " Set the split directions more natually
 set splitbelow
