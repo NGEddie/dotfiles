@@ -5,8 +5,8 @@ set laststatus=2
 set number relativenumber
 set cursorline
 
-set list
-set listchars=eol:,tab:>-
+" set list
+" set listchars=eol:,tab:>-
 
 set autowrite
 
@@ -67,7 +67,7 @@ call plug#end()
 "######################
 nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 nmap <silent> <C-j> <Plug>(ale_next_wrap)
-let g:ale_fixers = { 'javascript':['eslint'] }
+let g:ale_fixers = { 'javascript':['eslint'],'html':['prettier'] }
 let g:ale_fix_on_save = 1
 highlight ALEError ctermbg=none cterm=underline ctermfg=red
 
