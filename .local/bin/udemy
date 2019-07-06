@@ -1,0 +1,4 @@
+#!/bin/sh
+video=$(ls | grep $1)
+ # "/usr/bin/mpv --geometry=55%+100%+5% '$(ls| grep $1)' &"
+mpv --geometry=55%+100%+5% "$video"
