@@ -67,6 +67,8 @@ call plug#end()
 "######################
 nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 nmap <silent> <C-j> <Plug>(ale_next_wrap)
+let g:ale_linters = {'javascript':['eslint']}
+let g:ale_linters_explicit = 1
 let g:ale_fixers = { 'javascript':['eslint'],'html':['prettier'] }
 let g:ale_fix_on_save = 1
 highlight ALEError ctermbg=none cterm=underline ctermfg=red
@@ -92,14 +94,6 @@ inoremap <silent><expr> <TAB>
  endfunction
 
 let g:coc_snippet_next = '<tab>'
-
-" inoremap <silent><expr> <TAB> pumvisible() ? "\<C-n>" : <SID>check_back_space() ? "\<TAB>" : coc#refresh()
-inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
-
-" function! s:check_back_space() abort
-  " let col = col('.') - 1
-  " return !col || getline('.')[col - 1]  =~# '\s'
-" endfunction
 
 inoremap <expr><cr> pumvisible() ? "\<C-y>": "\<C-g>u\<CR>"
 
@@ -149,5 +143,4 @@ nnoremap <leader>l <C-W><C-l>
 nnoremap <leader>h <C-W><C-h>
 nnoremap <leader>j <C-W><C-j>
 nnoremap <leader>k <C-W><C-k>
-
 

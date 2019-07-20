@@ -4,7 +4,8 @@
         "commonjs": true,
         "es6": true
     },
-    "extends":[ "airbnb-base","plugin:prettier/recommended"],
+    "extends": ["airbnb-base","prettier", "plugin:node/recommended"],
+    "plugins": ["prettier"],
     "globals": {
         "Atomics": "readonly",
         "SharedArrayBuffer": "readonly"
@@ -13,7 +14,11 @@
         "ecmaVersion": 2018
     },
     "rules": {
-	    "no-console": "off",
-		"prettier/prettier": ["error",{"singleQuote":true}]
+      "prettier/prettier":"error",
+      "strict":"off",
+      "no-console":"off",
+      "prefer-destructuring":["error",{"object":true, "array":false}],
+      "no-unused-vars": ["warn",{"argsIgnorePattern":"req|res|next|val"}]
+
     }
 }
