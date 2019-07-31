@@ -26,6 +26,7 @@ exec --no-startup-id feh --bg-scale /home/nigel/wallpapers/arch1.jpg
 exec --no-startup-id compton -b
 exec --no-startup-id unclutter
 exec --no-startup-id xdotool mousemove 1600 900
+exec --no-startup-id start_conky
 
 #######################
 #####   Programs   #####

@@ -154,5 +154,3 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 #[ -s "$NvM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
 
-# Start screen fetch for new terminals
-screenfetch -p
