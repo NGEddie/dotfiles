@@ -1,6 +1,6 @@
 #!/bin/sh
 
-packages=$(pacman -Qu | grep -v "\[ignored\]" | wc -l)
+packages=$(yay -Qu | grep -v "\[ignored\]" | wc -l)
 
 [ $packages = 0 ] && exit 
 

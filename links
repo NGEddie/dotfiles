@@ -12,3 +12,4 @@ ln -s /home/nigel/repos/dotfiles/.local/bin/ /home/nigel/.local/
 ln -s /home/nigel/repos/dotfiles/wallpapers /home/nigel
 ln -s /home/nigel/repos/dotfiles/.vim/after/ftplugin /home/nigel/.vim/after/
 ln -s /home/nigel/repos/dotfiles/.vim/coc-settings.json /home/nigel/.vim/coc-settings.json
+ln -s /home/nigel/repos/dotfiles/.config/coc/ultisnips/javascript.snippets /home/nigel/.config/coc/ultisnips

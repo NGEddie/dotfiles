@@ -1,4 +1,4 @@
 #!/bin/sh
 killall conky
 sleep 5
-conky --config='/home/nigel/.config/conky/conky.conf' &
+/usr/bin/conky --config='/home/nigel/.config/conky/conky.conf' &

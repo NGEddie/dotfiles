@@ -20,13 +20,13 @@ bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% &&
 ########################
 ####   Auto Start   ####
 ########################
+exec --no-startup-id conky --config='/home/nigel/.config/conky/conky.conf'
 exec --no-startup-id i3lock -i /home/nigel/wallpapers/arch1.png
 exec --no-startup-id xautolock -time 10 -locker "i3lock -i /home/nigel/wallpapers/arch1.png"
 exec --no-startup-id feh --bg-scale /home/nigel/wallpapers/arch1.jpg
 exec --no-startup-id compton -b
 exec --no-startup-id unclutter
 exec --no-startup-id xdotool mousemove 1600 900
-exec --no-startup-id start_conky
 
 #######################
 #####   Programs   #####
@@ -34,6 +34,7 @@ exec --no-startup-id start_conky
 bindsym $mod+d exec dmenu_run
 bindsym $mod+F2 exec firefox
 bindsym $mod+Shift+t exec ~/.local/bin/toggleTransparency
+bindsym $mod+F3 exec ~/.local/bin/start_conky
 
 #######################
 #####    Focus    #####

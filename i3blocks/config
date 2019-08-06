@@ -3,7 +3,8 @@ separator_block_width=15
 markup=pango
 
 [pacUpdate]
-interval=3600
+interval=900
+signal=11
 
 [volume]
 interval=once
