@@ -271,13 +271,13 @@ mode "$mode_move_window" {
 
   bindsym h move left 5
   bindsym l move right 5
-  bindsym j move up 5
-  bindsym k move down 5
+  bindsym k move up 5
+  bindsym j move down 5
 
   bindsym Shift+h move left 25
   bindsym Shift+l move right 25
-  bindsym Shift+j move up 25
-  bindsym Shift+k move down 25
+  bindsym Shift+k move up 25
+  bindsym Shift+j move down 25
 
   bindsym Return mode "default"
   bindsym Escape mode "default"

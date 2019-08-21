@@ -1,0 +1,2 @@
+#!/bin/sh
+LD_PRELOAD='/usr//libgcc_s.so.1 /usr//libxcb.so.1 /usr//libgpg-error.so ./libcxxrt.so /usr/lib32/libstdc++.so.6 /usr/lib32/libopenal.so.1' steam
