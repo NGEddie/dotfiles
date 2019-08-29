@@ -1,6 +1,8 @@
 inoremap jj <ESC>
 let mapleader = " "
 
+let g:emmet_syntaxProfiles={"javascript":"html"}
+  "emmet.syntaxProfiles": {"javascript":"html","javascript":"jsx"}
 set laststatus=2
 set number relativenumber
 set cursorline
