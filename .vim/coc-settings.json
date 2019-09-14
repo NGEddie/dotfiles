@@ -1,6 +1,5 @@
 {
   "javascript.validate.enable":false,
-  "emmet.syntaxProfiles": {"javascript":"html"},
-  "emmet.includeLanguages": {"javascript":"html"}
-  ]
+  "emmet.syntaxProfiles": {"javascript":"jsx"},
+  "emmet.includeLanguages": {"javascript":"javascriptreact"}
 }
