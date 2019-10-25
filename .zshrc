@@ -1,3 +1,6 @@
+export LANG="en_GB.UTF-8"
+export LC_ALL="en_GB.UTF-8"
+
 if [[ ! $DISPLAY && $XDG_VTNR -eq 1 ]]; then
 	startx
 fi
@@ -17,6 +20,7 @@ export FZF_DEFAULT_COMMAND='rg --files --follow --hidden'
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 
 DEFAULT_USER="$USER"
+#POWERLEVEL9K_MODE='Powerlevel9k'
 POWERLEVEL9K_MODE='nerdfont-complete'
 ZSH_THEME="powerlevel9k/powerlevel9k"
 
@@ -148,7 +152,7 @@ alias vv="vim ~/.vimrc"
 alias vz="vim ~/.zshrc"
 alias vi3="vim ~/.config/i3/config"
 alias dot="cd ~/repos/dotfiles/ ; git status"
-alias git="hub"
+# alias git="hub"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"

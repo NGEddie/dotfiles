@@ -1,8 +1,8 @@
 inoremap jj <ESC>
 let mapleader = " "
 
-let g:emmet_syntaxProfiles={"javascript":"html"}
-  "emmet.syntaxProfiles": {"javascript":"html","javascript":"jsx"}
+" let g:emmet_syntaxProfiles={"javascript":"html"}
+" emmet.syntaxProfiles": {"javascript":"html","javascript":"jsx"}
 set laststatus=2
 set number relativenumber
 set cursorline
@@ -72,7 +72,7 @@ nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 nmap <silent> <C-j> <Plug>(ale_next_wrap)
 let g:ale_linters = {'javascript':['eslint']}
 let g:ale_linters_explicit = 1
-let g:ale_fixers = { 'javascript':['eslint'],'html':['prettier'],'json':['prettier'],'css':['prettier'] }
+let g:ale_fixers = { 'javascript':['eslint'],'html':['prettier'],'json':['prettier'],'css':['prettier'],'python':['autoped8'] }
 let g:ale_fix_on_save = 1
 let g:ale_javascript_eslint_executable='npx eslint'
 highlight ALEError ctermbg=none cterm=underline ctermfg=red

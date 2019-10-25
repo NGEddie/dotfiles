@@ -1,0 +1,3 @@
+cocInstall coc-python
+install pip install 'python-language-server[all]'
+check ALE fixers (set to e.g. autopep8)
