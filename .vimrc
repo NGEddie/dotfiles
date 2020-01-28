@@ -6,6 +6,11 @@ let mapleader = " "
 set laststatus=2
 set number relativenumber
 set cursorline
+set scrolloff=15
+
+set cmdheight=2
+set updatetime=300
+set statusline^=%{coc#status()}
 
 " set list
 " set listchars=eol:,tab:>-
@@ -49,7 +54,7 @@ set wildmode=list:longest,full
 call plug#begin('~/.vim/plugged')
 
 Plug 'sheerun/vim-polyglot'
-Plug 'w0rp/ale'
+" Plug 'w0rp/ale'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'neoclide/coc.nvim',{'branch':'release'}
@@ -68,14 +73,14 @@ call plug#end()
 "######################
 "#     Ale Config     #
 "######################
-nmap <silent> <C-k> <Plug>(ale_previous_wrap)
-nmap <silent> <C-j> <Plug>(ale_next_wrap)
-let g:ale_linters = {'javascript':['eslint']}
-let g:ale_linters_explicit = 1
-let g:ale_fixers = { 'javascript':['eslint'],'html':['prettier'],'json':['prettier'],'css':['prettier'],'python':['autoped8'] }
-let g:ale_fix_on_save = 1
-let g:ale_javascript_eslint_executable='npx eslint'
-highlight ALEError ctermbg=none cterm=underline ctermfg=red
+" nmap <silent> <C-k> <Plug>(ale_previous_wrap)
+" nmap <silent> <C-j> <Plug>(ale_next_wrap)
+" let g:ale_linters = {'javascript':['eslint']}
+" let g:ale_linters_explicit = 1
+" let g:ale_fixers = { 'javascript':['eslint'],'html':['prettier'],'json':['prettier'],'css':['prettier'],'python':['autopep8'] }
+" let g:ale_fix_on_save = 1
+" let g:ale_javascript_eslint_executable='npx eslint'
+" highlight ALEError ctermbg=none cterm=underline ctermfg=red
 
 "######################
 "#     fzf Config     #
@@ -100,6 +105,7 @@ inoremap <silent><expr> <TAB>
 let g:coc_snippet_next = '<tab>'
 
 inoremap <expr><cr> pumvisible() ? "\<C-y>": "\<C-g>u\<CR>"
+nnoremap <silent> <Leader>e  :<C-u>CocNext<CR>
 
 "######################
 "#   Molokai Config   #

@@ -30,8 +30,9 @@ POWERLEVEL9k_RPROMPT_ON_NEWLINE=false
 POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX=""
 POWERLEVEL9K_MULTILINE_NEWLINE_PROMPT_PREFIX=""
 POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX=""
+POWERLEVEL9K_SHORTEN_STRATEGY="truncate_to_last"
 
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(time status root_indicator context dir_writable dir vcs node_version command_execution_time newline os_icon)
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(status host time root_indicator dir_writable dir vcs node_version command_execution_time newline os_icon)
 POWERLEVEL9K_DISABLE_RPROMPT=true
 #POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status time)
 

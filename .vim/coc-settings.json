@@ -1,5 +1,12 @@
 {
   "javascript.validate.enable":false,
   "emmet.syntaxProfiles": {"javascript":"jsx"},
-  "emmet.includeLanguages": {"javascript":"javascriptreact"}
+  "emmet.includeLanguages": {"javascript":"javascriptreact"},
+  "coc.preferences.formatOnSaveFiletypes": [ "javascript","python" ],
+  "prettier.singleQuote": true,
+  "prettier.eslintIntegration": true,
+  "eslint.autoFixOnSave": true,
+  "python.formatting.provider": "black",
+  "python.linting.enabled": true,
+  "python.linting.lintOnSave": true
 }
