@@ -1,0 +1,4 @@
+{
+  "eslint.packageManager": "npm",
+	"coc.preferences.formatOnSaveFiletypes":["javascript","vim"]
+}
