@@ -12,6 +12,9 @@ set cmdheight=2
 set updatetime=300
 set statusline^=%{coc#status()}
 
+set t_Co=256
+syntax on
+
 " set list
 " set listchars=eol:,tab:>-
 
@@ -36,8 +39,8 @@ set undodir=/tmp
 set backupdir=/tmp
 
 " Column Width Settings
-set colorcolumn=80
-set textwidth=80
+set colorcolumn=90
+set textwidth=90
 set formatoptions=clqn1j
 
 " Set the split directions more natually
@@ -53,12 +56,14 @@ set wildmode=list:longest,full
 "#######################
 call plug#begin('~/.vim/plugged')
 
+Plug 'tomasr/molokai'
+Plug 'dikiaap/minimalist'
 Plug 'sheerun/vim-polyglot'
 " Plug 'w0rp/ale'
-Plug 'junegunn/fzf'
+" Plug 'junegunn/fzf'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install()  }  }
 Plug 'junegunn/fzf.vim'
 Plug 'neoclide/coc.nvim',{'branch':'release'}
-Plug 'tomasr/molokai'
 Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/nerdcommenter'
 Plug 'jiangmiao/auto-pairs'
@@ -68,6 +73,7 @@ Plug 'tpope/vim-surround'
 Plug 'airblade/vim-gitgutter'
 Plug 'machakann/vim-highlightedyank'
 Plug 'ntpeters/vim-better-whitespace'
+Plug 'yuezk/vim-js'
 call plug#end()
 
 "######################
@@ -110,8 +116,13 @@ nnoremap <silent> <Leader>e  :<C-u>CocNext<CR>
 "######################
 "#   Molokai Config   #
 "######################
-let g:molokai_original = 1
-colorscheme molokai
+" let g:molokai_original = 1
+" colorscheme molokai
+
+"######################
+"# Minimalist Config  #
+"######################
+colorscheme minimalist
 
 "######################
 "#   AutoPair Config  #
@@ -127,6 +138,8 @@ let g:NERDSpaceDelims=1
 "#  VimAirline Config #
 "######################
 let g:airline_powerline_fonts = 1
+let g:airline_theme='minimalist'
+let g:airline#extensions#tabline#enabled = 1
 
 "######################
 "#  VimFugitive Config #
@@ -135,11 +148,13 @@ nnoremap <leader>g :Gstatus<cr>
 nnoremap <leader>ga :Gwrite<cr>
 nnoremap <leader>gr :Gread<cr>
 nnoremap <leader>gc :Gcommit<cr>
+nnoremap <leader>gp :Gpush<cr>
 
 "######################
 "#     Keybindings    #
 "######################
 cmap Wq wq
+cmap W<cr> w<cr>
 nnoremap j gj
 nnoremap k gk
 
@@ -148,9 +163,17 @@ nnoremap k gk
 "######################
 nnoremap <leader><space> :nohlsearch<cr>
 nnoremap <leader>f :NERDTreeToggle<cr>
+" nnoremap <leader>f :CocCommand explorer<cr>
+
+"######################
+"#   Coding bindings  #
+"######################
+nnoremap <leader>ee :lope<cr>
+nnoremap <leader>e<cr> :lope<cr>
+
+
 " Bindings for switching vim panes
 nnoremap <leader>l <C-W><C-l>
 nnoremap <leader>h <C-W><C-h>
 nnoremap <leader>j <C-W><C-j>
 nnoremap <leader>k <C-W><C-k>
-
