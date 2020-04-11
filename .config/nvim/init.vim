@@ -5,8 +5,9 @@ call plug#begin('~/.config/nvim/plugged')
 
 Plug 'dikiaap/minimalist'
 Plug 'morhetz/gruvbox'
+Plug 'tomasr/molokai'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf', { 'dir': '~/fzf', 'do': './install --all'} 
 Plug 'junegunn/fzf.vim'
 Plug 'preservim/nerdtree'
 Plug 'preservim/nerdcommenter'
@@ -93,6 +94,22 @@ endif
 
 let g:coc_global_extensions = ['coc-tsserver', 'coc-json', 'coc-html', 'coc-css', 'coc-python', 'coc-snippets', 'coc-lists', 'coc-highlight', 'coc-prettier', 'coc-eslint', 'coc-pairs']
 
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-type-references)
+
+nnoremap <silent> K :call <SID>show_documentation()<CR>
+
+function! s:show_documentation()
+  if (index(['vim', 'help'], &filetype) >=0)
+    execute 'h '.expand('<cword>')
+  else
+    call CocAction('doHover')
+  endif
+endfunction
+
+nmap <leader>rn <Plug>(coc-rename)
 "######################
 "#   AutoPair Config  #
 "######################
@@ -113,25 +130,62 @@ let g:airline_theme='gruvbox'
 "######################
 "#  VimFugitive Config #
 "######################
-nnoremap <leader>g :Gstatus<cr>
-nnoremap <leader>ga :Gwrite<cr>
-nnoremap <leader>gr :Gread<cr>
-nnoremap <leader>gc :Gcommit<cr>
+" nnoremap <leader>g :Gstatus<cr>
+" nnoremap <leader>ga :Gwrite<cr>
+" nnoremap <leader>gr :Gread<cr>
+" nnoremap <leader>gc :Gcommit<cr>
 
 "######################
 "#     Keybindings    #
 "######################
-cmap Wq wq
+cmap Q<cr> q<cr>
+cmap Wq<cr> wq<cr>
+cmap W<cr> w<cr>
 nnoremap j gj
 nnoremap k gk
+
+"#######################
+"#   Buffer Bindings   #
+"#######################
+nnoremap <leader>b :ls<cr>
+nnoremap <leader>bn :bn<cr>
+nnoremap <leader>bp :bp<cr>
 
 "######################
 "#   Leader bindings  #
 "######################
 nnoremap <leader><space> :nohlsearch<cr>
 nnoremap <leader>f :NERDTreeToggle<cr>
-" Bindings for switching vim panes
+
+"######################################
+"#   Bindings for switching vim pane  #
+"######################################
 nnoremap <leader>l <C-W><C-l>
 nnoremap <leader>h <C-W><C-h>
 nnoremap <leader>j <C-W><C-j>
 nnoremap <leader>k <C-W><C-k>
+
+"####################
+"#   FZF bindings   #
+"####################
+nnoremap <leader>sf :Files<cr>
+nnoremap <leader>sg :GFiles<cr>
+nnoremap <leader>sl :Locate 
+nnoremap <leader>sh :History<cr>
+
+"######################
+"#   Coding bindings  #
+"######################
+nnoremap <leader>ee :lope<cr>
+nnoremap <leader>e<cr> :lope<cr>
+
+"#######################
+"#  Terminal bindings  #
+"#######################
+nnoremap <leader>t :botright 10sp<cr>:term<cr>i
+nnoremap <leader>tv :botright 50vsp<cr>:term<cr>i
+nnoremap <leader>tb :rightbelow sp<cr>:term<cr>i
+nnoremap <leader>tr :vert sp<cr>:term<cr>i
+
+tnoremap jj <C-\><C-n>
+

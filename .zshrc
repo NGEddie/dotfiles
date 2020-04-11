@@ -13,8 +13,9 @@ export PATH=$HOME/.local/bin:/usr/local/bin:$PATH
 export TERM="xterm-256color"
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
-export FZF_DEFAULT_COMMAND='rg --files --follow --hidden'
-# Set name of the theme to load --- if set to "random", it will
+# export FZF_DEFAULT_COMMAND='rg --files --follow --hidden'
+
+#Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
@@ -151,12 +152,16 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias ll="ls -lha"
 alias vv="vim ~/.vimrc"
+alias vn="vim ~/.config/nvim/init.vim"
 alias vz="vim ~/.zshrc"
 alias vi3="vim ~/.config/i3/config"
 alias dot="cd ~/repos/dotfiles/ ; git status"
+alias vim="nvim"
 # alias git="hub"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 #[ -s "$NvM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
 
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
