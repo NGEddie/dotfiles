@@ -156,7 +156,7 @@ alias vn="vim ~/.config/nvim/init.vim"
 alias vz="vim ~/.zshrc"
 alias vi3="vim ~/.config/i3/config"
 alias dot="cd ~/repos/dotfiles/ ; git status"
-alias vim="nvim"
+# alias vim="nvim"
 # alias git="hub"
 
 export NVM_DIR="$HOME/.nvm"
