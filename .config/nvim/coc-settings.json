@@ -1,4 +1,5 @@
 {
   "eslint.packageManager": "npm",
-	"coc.preferences.formatOnSaveFiletypes":["javascript","vim"]
+	"coc.preferences.formatOnSaveFiletypes":["javascript","vim"],
+  "suggest.noselect": false
 }

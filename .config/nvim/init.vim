@@ -7,7 +7,7 @@ Plug 'dikiaap/minimalist'
 Plug 'morhetz/gruvbox'
 Plug 'tomasr/molokai'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'junegunn/fzf', { 'dir': '~/fzf', 'do': './install --all'} 
+Plug 'junegunn/fzf', { 'dir': '~/fzf', 'do': './install --all'}
 Plug 'junegunn/fzf.vim'
 Plug 'preservim/nerdtree'
 Plug 'preservim/nerdcommenter'
@@ -15,6 +15,10 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'honza/vim-snippets'
+Plug 'machakann/vim-highlightedyank'
+Plug 'ntpeters/vim-better-whitespace'
+Plug 'https://github.com/xabikos/vscode-javascript'
 
 call plug#end()
 
@@ -73,7 +77,14 @@ inoremap <silent><expr> <TAB>
       \ pumvisible() ? "\<C-n>" :
       \ <SID>check_back_space() ? "\<TAB>" :
       \ coc#refresh()
-inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
+inoremap <expr> <S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
+inoremap <silent><expr> <cr>
+      \ pumvisible() ? coc#_select_confirm() :
+      \ coc#expandableOrJumpable() ? "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<CR>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
 
 function! s:check_back_space() abort
   let col = col('.') - 1
@@ -82,6 +93,8 @@ endfunction
 
 " Use <c-space> to trigger completion.
 inoremap <silent><expr> <c-space> coc#refresh()
+let g:coc_snippet_next = '<TAB>'
+let g:coc_snippet_prev = '<S-TAB>'
 
 " Use <cr> to confirm completion, `<C-g>u` means break undo chain at current
 " position. Coc only does snippet and additional edit on confirm.
@@ -150,6 +163,7 @@ nnoremap k gk
 nnoremap <leader>b :ls<cr>
 nnoremap <leader>bn :bn<cr>
 nnoremap <leader>bp :bp<cr>
+nnoremap <leader>bd :bd<cr>
 
 "######################
 "#   Leader bindings  #
@@ -170,7 +184,7 @@ nnoremap <leader>k <C-W><C-k>
 "####################
 nnoremap <leader>sf :Files<cr>
 nnoremap <leader>sg :GFiles<cr>
-nnoremap <leader>sl :Locate 
+nnoremap <leader>sl :Locate
 nnoremap <leader>sh :History<cr>
 
 "######################
@@ -188,4 +202,4 @@ nnoremap <leader>tb :rightbelow sp<cr>:term<cr>i
 nnoremap <leader>tr :vert sp<cr>:term<cr>i
 
 tnoremap jj <C-\><C-n>
-
+" autocmd FileType js UltiSnipsAddFiletypes javascript-es6
