@@ -26,18 +26,17 @@ call plug#end()
 
 inoremap jj <ESC>
 let mapleader = " "
+syntax on
+colorscheme gruvbox
+set t_Co=256
+syntax on
+set background=dark
 
+set noerrorbells
 set laststatus=2
 set number relativenumber
 set cursorline
-set t_Co=256
-syntax on
-colorscheme gruvbox
-
 set hidden
-set nobackup
-set nowritebackup
-
 set cmdheight=2
 set updatetime=300
 set shortmess+=c
@@ -45,8 +44,9 @@ set signcolumn=yes
 
 " Tab Settings
 set shiftwidth=2
-set tabstop=2
+set tabstop=2 softtabstop=2
 set expandtab
+set smartindent
 
 " Search Settings
 set hlsearch
@@ -55,9 +55,11 @@ set ignorecase
 set smartcase
 
 " Undo Settings
+set noswapfile
+set nobackup
+set nowritebackup
 set undofile
-set undodir=/tmp
-set backupdir=/tmp
+set undodir=~/.config/nvim/undodir
 
 " Column Width Settings
 set colorcolumn=80
