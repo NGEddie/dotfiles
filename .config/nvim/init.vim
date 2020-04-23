@@ -182,6 +182,10 @@ nnoremap <leader>l <C-W><C-l>
 nnoremap <leader>h <C-W><C-h>
 nnoremap <leader>j <C-W><C-j>
 nnoremap <leader>k <C-W><C-k>
+noremap <silent> <C-Left> :vertical resize +3<CR>
+noremap <silent> <C-Right> :vertical resize -3<CR>
+noremap <silent> <C-Up> :resize +3<CR>
+noremap <silent> <C-Down> :resize -3<CR>
 
 "####################
 "#   FZF bindings   #
