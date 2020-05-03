@@ -173,7 +173,8 @@ nnoremap <leader>bd :bd<cr>
 "#   Leader bindings  #
 "######################
 nnoremap <leader><space> :nohlsearch<cr>
-nnoremap <leader>f :NERDTreeToggle<cr>
+" nnoremap <leader>f :NERDTreeToggle<cr>
+nnoremap <leader>f :CocCommand explorer<cr>
 
 "######################################
 "#   Bindings for switching vim pane  #
@@ -194,6 +195,7 @@ nnoremap <leader>sf :Files<cr>
 nnoremap <leader>sg :GFiles<cr>
 nnoremap <leader>sl :Locate
 nnoremap <leader>sh :History<cr>
+nnoremap <leader>bb :Buffer<cr>
 
 "######################
 "#   Coding bindings  #

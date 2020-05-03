@@ -2,17 +2,17 @@ let SessionLoad = 1
 let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0
 let v:this_session=expand("<sfile>:p")
 silent only
-cd ~/Documents/Repos/test
+cd ~/repos/jstest
 if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +16 test.js
-badd +0 ~/.config/nvim/init.vim
+badd +5 test.js
+badd +2 ~/repos/isolog/code/requirements.txt
 argglobal
 %argdel
-$argadd .
-edit ~/.config/nvim/init.vim
+$argadd test.js
+edit ~/repos/isolog/code/requirements.txt
 set splitbelow splitright
 wincmd t
 set winminheight=0
@@ -29,12 +29,13 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 112 - ((65 * winheight(0) + 42) / 85)
+let s:l = 2 - ((1 * winheight(0) + 29) / 59)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-112
-normal! 0174|
+2
+normal! 0
+if exists(':tcd') == 2 | tcd ~/repos | endif
 tabnext 1
 if exists('s:wipebuf') && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf
