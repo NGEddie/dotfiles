@@ -21,6 +21,7 @@ Plug 'honza/vim-snippets'
 Plug 'machakann/vim-highlightedyank'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'https://github.com/xabikos/vscode-javascript'
+Plug 'jalvesaq/Nvim-R'
 
 call plug#end()
 
@@ -109,7 +110,7 @@ else
   imap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 endif
 
-let g:coc_global_extensions = ['coc-tsserver', 'coc-json', 'coc-html', 'coc-css', 'coc-python', 'coc-snippets', 'coc-lists', 'coc-highlight', 'coc-prettier', 'coc-eslint', 'coc-pairs']
+let g:coc_global_extensions = ['coc-tsserver', 'coc-json', 'coc-html', 'coc-css', 'coc-python', 'coc-snippets', 'coc-lists', 'coc-highlight', 'coc-prettier', 'coc-eslint', 'coc-pairs', 'coc-r-lsp']
 
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
@@ -213,3 +214,7 @@ nnoremap <leader>tr :vert sp<cr>:term<cr>i
 
 tnoremap jj <C-\><C-n>
 " autocmd FileType js UltiSnipsAddFiletypes javascript-es6
+
+"#######################
+"#     R bindings      #
+"#######################
