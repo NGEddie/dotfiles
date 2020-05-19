@@ -27,10 +27,8 @@ call plug#end()
 
 inoremap jj <ESC>
 let mapleader = " "
-syntax on
 colorscheme gruvbox
 set t_Co=256
-syntax on
 set background=dark
 
 set noerrorbells
