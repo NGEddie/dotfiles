@@ -1,5 +1,5 @@
 {
-	"coc.preferences.formatOnSaveFiletypes":["javascript","json","vim","python"],
+	"coc.preferences.formatOnSaveFiletypes":["javascript","json","vim","python","R","Rmd"],
   "prettier.singleQuote": true,
   "prettier.eslintIntegration": true,
   "eslint.autoFixOnSave": false,

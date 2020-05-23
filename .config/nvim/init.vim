@@ -21,8 +21,11 @@ Plug 'honza/vim-snippets'
 Plug 'machakann/vim-highlightedyank'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'https://github.com/xabikos/vscode-javascript'
+Plug 'ncm2/ncm2'
 Plug 'jalvesaq/Nvim-R'
-
+Plug 'gaalcaras/ncm-R'
+Plug 'roxma/nvim-yarp'
+Plug 'lervag/vimtex'
 call plug#end()
 
 inoremap jj <ESC>
@@ -108,7 +111,7 @@ else
   imap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 endif
 
-let g:coc_global_extensions = ['coc-tsserver', 'coc-json', 'coc-html', 'coc-css', 'coc-python', 'coc-snippets', 'coc-lists', 'coc-highlight', 'coc-prettier', 'coc-eslint', 'coc-pairs', 'coc-r-lsp']
+let g:coc_global_extensions = ['coc-tsserver', 'coc-json', 'coc-html', 'coc-css', 'coc-python', 'coc-snippets', 'coc-lists', 'coc-highlight', 'coc-prettier', 'coc-eslint', 'coc-pairs']
 
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
@@ -216,3 +219,24 @@ tnoremap jj <C-\><C-n>
 "#######################
 "#     R bindings      #
 "#######################
+" Start R
+nnoremap <silent> <leader>r<space> :call StartR("default")<cr>
+" Close R
+nnoremap <silent> <leader>rq :call RQuit('nosave')<cr>
+" Send Chunk to R
+nnoremap <silent> <leader>rr :call b:SendChunkToR("silent", "stay")<cr>
+nnoremap <silent> <leader>rsc :call b:SendChunkToR("silent", "stay")<cr>
+" Send line to R
+nnoremap <silent> <leader>rsl :call SendLineToR("down")<cr>
+" Send file to R (R files only)
+nnoremap <silent> <leader>rsf :call SendFileToR("silent")<cr>
+" get names/headers in data frame
+nnoremap <silent> <leader>rn :call RAction("nvim.names")<cr>
+nnoremap <silent> <leader>rdf :call RAction("viewobj", ", howto='split'")<cr>
+nnoremap <silent> <leader>ro :call RObjBrowser()<cr>
+nnoremap <silent> <leader>rmh :call RMakeRmd("html_document")<cr>
+nnoremap <silent> <leader>rmp :call RMakeRmd("pdf_document")<cr>
+
+
+autocmd BufEnter * call ncm2#enable_for_buffer()
+set completeopt=noinsert,menuone,noselect
