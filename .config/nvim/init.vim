@@ -3,13 +3,15 @@
 "#######################
 " Linux plug install
 " curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-call plug#begin('~/.config/nvim/plugged')
 
-Plug 'dikiaap/minimalist'
+call plug#begin('~/.config/nvim/plugged')
+" Colour Schemes
 Plug 'morhetz/gruvbox'
-Plug 'tomasr/molokai'
+"Plug 'dikiaap/minimalist'
+"Plug 'tomasr/molokai'
+
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'junegunn/fzf', { 'dir': '~/fzf', 'do': './install --all'}
+Plug 'junegunn/fzf', { 'dir': '~/Repos/fzf', 'do': './install --all'}
 Plug 'junegunn/fzf.vim'
 Plug 'preservim/nerdtree'
 Plug 'preservim/nerdcommenter'
@@ -17,15 +19,26 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'honza/vim-snippets'
 Plug 'machakann/vim-highlightedyank'
 Plug 'ntpeters/vim-better-whitespace'
-Plug 'https://github.com/xabikos/vscode-javascript'
 Plug 'ncm2/ncm2'
 Plug 'jalvesaq/Nvim-R'
 Plug 'gaalcaras/ncm-R'
 Plug 'roxma/nvim-yarp'
 Plug 'lervag/vimtex'
+Plug 'ncm2/ncm2-bufword'
+Plug 'ncm2/ncm2-path'
+Plug 'ncm2/ncm2-bufword'
+Plug 'chemzqm/vim-jsx-improve'
+Plug 'kevinoid/vim-jsonc'
+
+" Snippets
+" Plug 'epilande/vim-react-snippets', { 'for': ['javascript', 'javascriptreact'] }
+Plug 'dsznajder/vscode-es7-javascript-react-snippets', { 'do': 'yarn install --frozen-lockfile && yarn compile' }
+" Plug 'xabikos/vscode-javascript'
+" Plug 'honza/vim-snippets'
+" Plug 'sirver/UltiSnips'
+"Plug 'ncm2/ncm2-ultisnips'
 call plug#end()
 
 inoremap jj <ESC>
@@ -111,14 +124,14 @@ else
   imap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 endif
 
-let g:coc_global_extensions = ['coc-tsserver', 'coc-json', 'coc-html', 'coc-css', 'coc-python', 'coc-snippets', 'coc-lists', 'coc-highlight', 'coc-prettier', 'coc-eslint', 'coc-pairs']
+let g:coc_global_extensions = ['coc-tsserver', 'coc-json', 'coc-html', 'coc-css', 'coc-prettier', 'coc-python', 'coc-lists', 'coc-prettier', 'coc-eslint', 'coc-pairs', 'coc-explorer']
 
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
-nmap <silent> gr <Plug>(coc-type-references)
+" nmap <silent> gr <Plug>(coc-type-references)
 
-nnoremap <silent> K :call <SID>show_documentation()<CR>
+" nnoremap <silent> K :call <SID>show_documentation()<CR>
 
 function! s:show_documentation()
   if (index(['vim', 'help'], &filetype) >=0)
@@ -128,7 +141,7 @@ function! s:show_documentation()
   endif
 endfunction
 
-nmap <leader>rn <Plug>(coc-rename)
+nmap <leader>gr <Plug>(coc-rename)
 "######################
 "#   AutoPair Config  #
 "######################
@@ -185,16 +198,16 @@ nnoremap <leader>l <C-W><C-l>
 nnoremap <leader>h <C-W><C-h>
 nnoremap <leader>j <C-W><C-j>
 nnoremap <leader>k <C-W><C-k>
-noremap <silent> <C-Left> :vertical resize +3<CR>
-noremap <silent> <C-Right> :vertical resize -3<CR>
-noremap <silent> <C-Up> :resize +3<CR>
-noremap <silent> <C-Down> :resize -3<CR>
+noremap <silent> <leader><Left> :vertical resize +15<CR>
+noremap <silent> <leader><Right> :vertical resize -15<CR>
+noremap <silent> <leader><Up> :resize +3<CR>
+noremap <silent> <leader><Down>:resize -3<CR>
 
 "####################
 "#   FZF bindings   #
 "####################
 nnoremap <leader>sf :Files<cr>
-nnoremap <leader>sg :GFiles<cr>
+nnoremap <leader>sg :GFiles --exclude-standard --others --cached<cr>
 nnoremap <leader>sl :Locate
 nnoremap <leader>sh :History<cr>
 nnoremap <leader>bb :Buffer<cr>
@@ -232,11 +245,15 @@ nnoremap <silent> <leader>rsl :call SendLineToR("down")<cr>
 nnoremap <silent> <leader>rsf :call SendFileToR("silent")<cr>
 " get names/headers in data frame
 nnoremap <silent> <leader>rn :call RAction("nvim.names")<cr>
+nnoremap <silent> <leader>rh :call RAction("head")<cr>
+nnoremap <silent> <leader>rp :call RAction("print")<cr>
+nnoremap <silent> <leader>rs :call RAction("str")<cr>
 nnoremap <silent> <leader>rdf :call RAction("viewobj", ", howto='split'")<cr>
 nnoremap <silent> <leader>ro :call RObjBrowser()<cr>
 nnoremap <silent> <leader>rmh :call RMakeRmd("html_document")<cr>
 nnoremap <silent> <leader>rmp :call RMakeRmd("pdf_document")<cr>
 
+nnoremap <expr>K getline('.')[col('.')-1]==' ' ? "r<CR>" : "i<CR><Esc>"
 
 autocmd BufEnter * call ncm2#enable_for_buffer()
 set completeopt=noinsert,menuone,noselect

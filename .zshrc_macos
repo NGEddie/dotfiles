@@ -165,7 +165,10 @@ source $(brew --prefix nvm)/nvm.sh
 
 # alias python="/usr/local/bin/python3"
 alias vim='nvim'
+alias nigel='cd "/Users/nigel/Dropbox (Pets at Home)/Pet Team - Office Pet Team/Nigel/"'
+
 # export PATH=$PATH:/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+[ -f ~/Repos/fzf/.fzf.zsh ] && source ~/Repos/fzf/.fzf.zsh
 
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
