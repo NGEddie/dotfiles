@@ -1,71 +1,17 @@
-export LANG="en_GB.UTF-8"
-export LC_ALL="en_GB.UTF-8"
-
-if [[ ! $DISPLAY && $XDG_VTNR -eq 1 ]]; then
-	startx
-fi
-
-
-
 # If you come from bash you might have to change your $PATH.
-export PATH=$HOME/.local/bin:/usr/local/bin:$PATH
+# export PATH=$HOME/bin:/usr/local/bin:$PATH
 
-export TERM="xterm-256color"
 # Path to your oh-my-zsh installation.
-export ZSH=$HOME/.oh-my-zsh
-# export FZF_DEFAULT_COMMAND='rg --files --follow --hidden'
+export ZSH="/home/nigel/.oh-my-zsh"
 
-#Set name of the theme to load --- if set to "random", it will
+# Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
-# See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-
-DEFAULT_USER="$USER"
-#POWERLEVEL9K_MODE='Powerlevel9k'
-POWERLEVEL9K_MODE='nerdfont-complete'
-ZSH_THEME="powerlevel9k/powerlevel9k"
-
-POWERLEVEL9K_PROMPT_ADD_NEWLINE=true
-POWERLEVEL9K_PROMPT_ON_NEWLINE=false
-POWERLEVEL9k_RPROMPT_ON_NEWLINE=false
-POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX=""
-POWERLEVEL9K_MULTILINE_NEWLINE_PROMPT_PREFIX=""
-POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX=""
-POWERLEVEL9K_SHORTEN_STRATEGY="truncate_to_last"
-
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(status host time root_indicator dir_writable dir vcs node_version virtualenv command_execution_time newline os_icon)
-POWERLEVEL9K_DISABLE_RPROMPT=true
-#POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status time)
-
-#POWERLEVEL9K_LEFT_SEGMENT_SEPARATOR=""
-#POWERLEVEL9K_RIGHT_SEGMENT_SEPARATOR=""
-
-POWERLEVEL9K_HOST_LOCAL_BACKGROUND='113'
-POWERLEVEL9K_HOST_LOCAL_FOREGROUND='black'
-
-POWERLEVEL9K_USER_DEFAULT_BACKGROUND='017'
-POWERLEVEL9K_USER_DEFAULT_FOREGROUND='white'
-POWERLEVEL9K_USER_ICON=''
-POWERLEVEL9K_SUDO_ICON=''
-
-POWERLEVEL9K_DIR_DEFAULT_FOREGROUND='white'
-POWERLEVEL9K_DIR_PATH_HIGHLIGHT_FOREGROUND='white'
-POWERLEVEL9K_DIR_PATH_HIGHLIGHT_BOLD=true
-
-POWERLEVEL9K_NODE_ICON=''
-POWERLEVEL9K_NODE_VERSION_BACKGROUND='022'
-
-POWERLEVEL9K_STATUS_OK_ICON=''
-POWERLEVEL9K_STATUS_VERBOSE=true
-POWERLEVEL9k_STATUS_CROSS=true
-
-POWERLEVEL9K_TIME_ICON=''
-
-POWERLEVEL9K_VIRTUALENV_FOREGROUND='white'
+# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
-# a theme from this variable instead of looking in ~/.oh-my-zsh/themes/
+# a theme from this variable instead of looking in $ZSH/themes/
 # If set to an empty array, this variable will have no effect.
 # ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
 
@@ -86,7 +32,7 @@ POWERLEVEL9K_VIRTUALENV_FOREGROUND='white'
 # export UPDATE_ZSH_DAYS=13
 
 # Uncomment the following line if pasting URLs and other text is messed up.
-# DISABLE_MAGIC_FUNCTIONS=true
+# DISABLE_MAGIC_FUNCTIONS="true"
 
 # Uncomment the following line to disable colors in ls.
 # DISABLE_LS_COLORS="true"
@@ -117,15 +63,56 @@ POWERLEVEL9K_VIRTUALENV_FOREGROUND='white'
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
 # Which plugins would you like to load?
-# Standard plugins can be found in ~/.oh-my-zsh/plugins/*
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
+# Standard plugins can be found in $ZSH/plugins/
+# Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
+
+ZSH_THEME="powerlevel10k/powerlevel10k"
 plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
+POWERLEVEL9K_MODE='nerdfont-complete'
+POWERLEVEL9K_PROMPT_ADD_NEWLINE=true
+POWERLEVEL9K_PROMPT_ON_NEWLINE=false
+POWERLEVEL9K_PROMPT_ON_NEWLINE=false
+POWERLEVEL9k_RPROMPT_ON_NEWLINE=false
+POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX=""
+POWERLEVEL9K_MULTILINE_NEWLINE_PROMPT_PREFIX=""
+POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX=""
+POWERLEVEL9K_SHORTEN_STRATEGY="truncate_to_last"
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(status host time root_indicator dir_writable dir vcs node_version virtualenv command_execution_time newline os_icon)
+POWERLEVEL9K_DISABLE_RPROMPT=true
+
+POWERLEVEL9K_HOST_REMOTE_BACKGROUND='113'
+POWERLEVEL9K_HOST_REMOTE_FOREGROUND='darkblue'
+POWERLEVEL9K_HOST_LOCAL_BACKGROUND='113'
+POWERLEVEL9K_HOST_LOCAL_FOREGROUND='black'
+
+POWERLEVEL9K_USER_DEFAULT_BACKGROUND='017'
+POWERLEVEL9K_USER_DEFAULT_FOREGROUND='white'
+POWERLEVEL9K_USER_ICON=''
+POWERLEVEL9K_SUDO_ICON=''
+
+POWERLEVEL9K_DIR_DEFAULT_FOREGROUND='white'
+POWERLEVEL9K_DIR_DEFAULT_BACKGROUND='darkblue'
+POWERLEVEL9K_DIR_PATH_HIGHLIGHT_FOREGROUND='white'
+POWERLEVEL9K_DIR_PATH_HIGHLIGHT_BOLD=true
+
+POWERLEVEL9K_NODE_ICON=''
+POWERLEVEL9K_NODE_VERSION_BACKGROUND='darkgreen'
+
+POWERLEVEL9K_STATUS_OK_ICON=''
+POWERLEVEL9K_STATUS_VERBOSE=true
+POWERLEVEL9k_STATUS_CROSS=true
+
+POWERLEVEL9K_TIME_ICON=''
+POWERLEVEL9K_VIRTUALENV_FOREGROUND='white'
+POWERLEVEL9K_OS_ICON_BACKGROUND='black'
+POWERLEVEL9K_OS_ICON_FOREGROUND='white'
+
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
@@ -150,19 +137,11 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias ll="ls -lha"
-alias vv="vim ~/.vimrc"
-alias vn="vim ~/.config/nvim/init.vim"
-alias vz="vim ~/.zshrc"
-alias vi3="vim ~/.config/i3/config"
-alias dot="cd ~/repos/dotfiles/ ; git status"
-alias vim="nvim"
-alias vvim="/usr/bin/vim"
-# alias git="hub"
 
 export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-#[ -s "$NvM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
-
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+alias vim='nvim'
